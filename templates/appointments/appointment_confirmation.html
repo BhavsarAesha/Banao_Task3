@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #99b6d2, #ea5d80);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #6b0c83;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #1a5594;
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            color: #fff;
+            background-color: #6b0c83;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        a:hover {
+            background-color: #9027a5;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appointment Confirmation</h1>
+        <p>Doctor: {{ appointment.doctor.get_full_name }}</p>
+        <p>Date: {{ appointment.appointment_date }}</p>
+        <p>Start Time: {{ appointment.start_time }}</p>
+        <p>End Time: {{ appointment.end_time }}</p>
+        <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
